@@ -27,9 +27,29 @@ let peeps = [
 console.log(countScores(peeps)); //=> { Anthony: 4, Fred: 4, Winnie: 6 }
 ***********************************************************************/
 
+let peeps = [
+  {name: "Anthony", score: 2},
+  {name: "Winnie", score: 2},
+  {name: "Fred", score: 2},
+  {name: "Winnie", score: 2},
+  {name: "Fred", score: 2},
+  {name: "Anthony", score: 2},
+  {name: "Winnie", score: 2}
+];
+
 function countScores(people) {
-  // your code here
+  let obj = {};
+  let func = people.forEach(function (ele) {
+    if (obj[ele.name] === undefined) {
+      obj[ele.name] = ele.score;
+    } else {
+      obj[ele.name] += ele.score;
+    }
+  });
+  return obj
 }
+
+console.log(countScores(peeps));
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 module.exports = countScores;

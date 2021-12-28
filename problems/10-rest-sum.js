@@ -10,8 +10,11 @@ restSum(0); // => 0
 ***********************************************************************/
 
 // you'll need to change the parameters!
-function restSum() {
-  // your code here
+
+function restSum(...num) {
+  return num.reduce(function (accum, cur) {
+    return accum += cur;
+  })
 }
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/

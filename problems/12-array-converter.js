@@ -12,8 +12,15 @@ console.log(arrayConverter(["apple", "banana", "potato", "banana"])); // => {app
 ***********************************************************************/
 
 function arrayConverter(array) {
-  // your code here
+  let result = {};
+    array.forEach(function (e) {
+      if(!result[e]) { result[e]=0; }
+      result[e]++;
+    });
+  return result;
 }
+
+console.log(arrayConverter(["apple", "apple"]));
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 module.exports = arrayConverter;
